@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='MainStyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <title>Recommendation system</title>
+</head>
+
+<body>
+    <div class="container1">
+        <header class="navBar">
+            <a href="/" class="logo">
+                <span class="greyColor">
+
+                    <span class="logoName">Recommend Yourself</span>
+
+
+            </a>
+            <ul class="menu">
+                <li><a href="{{ url_for('start') }}" class="decoration">Home</a></li>
+                <li><a href="{{ url_for('recommend') }}" class="decoration">Recommend</a></li>
+                <li><a href="" class="decoration">Blank</a></li>
+                <li><a href="#Contact" class="decoration">Contact me</a></li>
+            </ul>
+        </header>
+    </div>
+    <h1 class="hed">Some Top Books </h1>
+    <hr style="width: 70%;">
+    <div class="container2">
+        
+        {% for i in range(bookName|length) %}
+        <div class="card">
+            <img src="{{ Image[i] }}" alt="">
+            <h3 class="long-text" >{{ bookName[i] }}</h3>
+            <p class="long-text">{{ bookauthor[i] }}</p>
+            <p class="long-text">ISBN : {{ Isbn[i] }}</p>
+            <p class="long-text">No. of Rating : {{ NoRating[i] }}</p>
+        </div>
+        {% endfor %}
+
+        
+
+    </div>
+    <div class="containerContactMe7">
+        <div class="greetDivision">
+        <div class="left">
+            <div class="name">
+                <h1 style="font-size: 3rem;" id="Contact">Contact Me</h1> 
+                <img alt="☎️" draggable="false" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/260e.png" style="height: 4em; width: 4em; margin: 0px 0.05em 0px 3.1em; vertical-align: -0.1em;">
+            </div>
+            <h3 class="AboutMain">Discuss a project or just want to say hi? My Inbox is open for all.</h3>
+            <h1 style="font-size: 2rem;">Ayushaiml14@gmail.com</h1>
+            <div class="ContactsContainer1">
+                <a href="https://github.com/AyushAI14" target="_blank"><i
+                        class="fa-brands fa-square-github"></i></a>
+                <a href="https://www.linkedin.com/in/ayush-vishwakarma-a2450a28b/" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:ayushaiml14@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://kit.fontawesome.com/73c3b1fe1f.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
