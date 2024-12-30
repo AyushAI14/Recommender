@@ -13,3 +13,6 @@ __pycache__/
 # Exclude logs and unnecessary files
 *.log
 *.tmp
+
+
+Data/
