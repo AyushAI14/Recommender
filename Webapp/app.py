@@ -51,7 +51,6 @@ def Userrecommend():
     return render_template("recommend.html", data=data,user_input=Userinput)
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
 
 
