@@ -8,15 +8,9 @@ finalpopularity = pickle.load(open('Model/finalpopularity.pkl', "rb"))
 with gzip.open('/home/ayush/Documents/AI/Machine_Learning/Projects/RecommendationYourself/Model/finaldf_compressed.gz', 'rb') as f:
     finaldf = pickle.load(f)
 
-with gzip.open('/home/ayush/Documents/AI/Machine_Learning/Projects/RecommendationYourself/Model/book_compressed.gz', 'rb') as f:
-    book = pickle.load(f)
+book = pickle.load(open('Model/book.pkl', "rb"))
 
-with gzip.open('/home/ayush/Documents/AI/Machine_Learning/Projects/RecommendationYourself/Model/similarity_score_compressed.gz', 'rb') as f:
-    similarityScore = pickle.load(f)
-
-# book = pickle.load(open('Model/book.pkl', "rb"))
-
-# similarityScore = pickle.load(open('Model/similarityScore.pkl', "rb"))
+similarityScore = pickle.load(open('Model/similarityScore.pkl', "rb"))
 
 app = Flask(__name__,template_folder='templates',static_folder='static',static_url_path='/')
 @app.route("/")
