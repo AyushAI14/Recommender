@@ -2,10 +2,10 @@ from compress_pickle import dump
 import pandas as pd
 
 # Load your original .pkl file
-df = pd.read_pickle("/home/ayush/Documents/AI/Machine_Learning/Projects/RecommendationYourself/Model/similarityScore.pkl")
+df = pd.read_pickle("/home/ayush/Documents/AI/Machine_Learning/Projects/RecommendationYourself/Model/finalpopularity.pkl")
 
 # Compress and save the .pkl file
-compressed_file = "similarity_score_compressed.gz"  # You can choose a different compression extension (e.g., .bz2, .lzma)
+compressed_file = "finalpopularitycompressed.gz"  # You can choose a different compression extension (e.g., .bz2, .lzma)
 dump(df, compressed_file, compression="gzip")
 
 print(f"Compressed file saved as: {compressed_file}")
